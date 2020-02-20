@@ -1,0 +1,2 @@
+.DS_Store
+myNotepad/.DS_Store

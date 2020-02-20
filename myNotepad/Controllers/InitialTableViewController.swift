@@ -15,7 +15,8 @@ class InitialTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
     }
     
@@ -33,6 +34,9 @@ class InitialTableViewController: UITableViewController {
         return cell
     }
 
+    
+    //MARK: - Add button pressed
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "goToNewNoteController", sender: self)
     }

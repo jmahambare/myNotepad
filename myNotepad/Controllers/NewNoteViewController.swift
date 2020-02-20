@@ -19,7 +19,30 @@ class NewNoteViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        saveNote()
+    }
+    
+    //Data manipulation methods
+    
+    func saveNote() {
+        
+        let newNote = Notes(context: context.self)
+        
+        if let noteText = textView.text {
+            newNote.noteDetail = noteText
+            
+            do {
+                try context.save()
+            } catch {
+                print("Error saving context \(error)")
+            }
+        }
+        
+    }
 
 }
 
