@@ -15,6 +15,19 @@ class InitialTableViewController: UITableViewController {
 
         
     }
+    
+    //MARK: - Add TableView Data Sources
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTitleCell", for: indexPath)
+        cell.textLabel?.text = "hello"
+        return cell
+    }
 
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "goToNewNoteController", sender: self)

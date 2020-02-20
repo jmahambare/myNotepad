@@ -15,6 +15,7 @@
 		8A27638023FE68C9006D4243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A27637F23FE68C9006D4243 /* Assets.xcassets */; };
 		8A27638323FE68C9006D4243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A27638123FE68C9006D4243 /* LaunchScreen.storyboard */; };
 		8A27638B23FE6D48006D4243 /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27638A23FE6D48006D4243 /* InitialTableViewController.swift */; };
+		8A27639123FEA0EE006D4243 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A27639023FEA0EE006D4243 /* DisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8A27638223FE68C9006D4243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A27638423FE68C9006D4243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A27638A23FE6D48006D4243 /* InitialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
+		8A27639023FEA0EE006D4243 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				8A27638A23FE6D48006D4243 /* InitialTableViewController.swift */,
 				8A27637723FE68C6006D4243 /* NewNoteViewController.swift */,
+				8A27639023FEA0EE006D4243 /* DisplayViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A27638B23FE6D48006D4243 /* InitialTableViewController.swift in Sources */,
+				8A27639123FEA0EE006D4243 /* DisplayViewController.swift in Sources */,
 				8A27637823FE68C6006D4243 /* NewNoteViewController.swift in Sources */,
 				8A27637423FE68C6006D4243 /* AppDelegate.swift in Sources */,
 				8A27637623FE68C6006D4243 /* SceneDelegate.swift in Sources */,
