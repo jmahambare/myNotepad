@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class InitialTableViewController: UITableViewController {
 
+    var notes = [Notes]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,13 +22,14 @@ class InitialTableViewController: UITableViewController {
     //MARK: - Add TableView Data Sources
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        print(notes.count)
+        return notes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTitleCell", for: indexPath)
-        cell.textLabel?.text = "hello"
+        cell.textLabel?.text = notes[indexPath.row].noteDetail
         return cell
     }
 
