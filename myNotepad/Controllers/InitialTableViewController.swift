@@ -13,11 +13,19 @@ class InitialTableViewController: UITableViewController {
 
     var notes = [Notes]()
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        loadNotes()
     }
     
     //MARK: - Add TableView Data Sources
@@ -32,6 +40,22 @@ class InitialTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTitleCell", for: indexPath)
         cell.textLabel?.text = notes[indexPath.row].noteDetail
         return cell
+    }
+    
+    
+    //MARK: - Data Manipulation methods
+    
+    func loadNotes() {
+        
+        let request: NSFetchRequest<Notes> = Notes.fetchRequest()
+        
+        do {
+            notes = try context.fetch(request)
+        } catch {
+            print("Error fetching request \(error)")
+        }
+        
+        tableView.reloadData()
     }
 
     
