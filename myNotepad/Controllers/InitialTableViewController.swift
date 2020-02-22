@@ -24,11 +24,11 @@ class InitialTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        navigationController?.isToolbarHidden = true
         loadNotes()
     }
     
-    //MARK: - Add TableView Data Sources
+    //MARK: - TableView Data Sources
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(notes.count)
@@ -42,6 +42,16 @@ class InitialTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - TableView Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let dvc = storyboard?.instantiateViewController(identifier: "DisplayViewController") as! DisplayViewController
+        dvc.selectedNote = notes[indexPath.row]
+        navigationController?.pushViewController(dvc, animated: true)
+    }
+    
+        
     
     //MARK: - Data Manipulation methods
     

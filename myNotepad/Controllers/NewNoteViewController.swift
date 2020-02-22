@@ -33,6 +33,7 @@ class NewNoteViewController: UIViewController {
         let newNote = Notes(context: context.self)
         
         if let noteText = textView.text {
+            
             newNote.noteDetail = noteText
             
             do {
